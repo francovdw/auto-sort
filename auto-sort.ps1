@@ -15,11 +15,11 @@ $confirmfolder = Test-Path -PathType Container "$path\_Other"
     if ($confirmfolder -ne $true){New-Item "$path\_Other" -ItemType Directory -Force -EA SilentlyContinue}
 
 # File name extension list (File types that will be moved to the archived folder)
-$extlist = "*.ps1","*.txt","*.pdf","*.docx","*.doc","*.xlsx","*.xls","*.png","*.jpg","*.csv","*.exe","*.msi","*.zip","*.rar","*.tar","*.log","*.cfg","*.iso","*.rdp","*.mp4","*.mp3","*.wav","*.msg","*.cer","*.deb","*.bat","*.pfx","*.img","*.ini","*.xlsm","*.pptx","*.msu","*.tbxml","*.pcapn","*.drawio"
+$Extension_List = "*.ps1","*.txt","*.pdf","*.docx","*.doc","*.xlsx","*.xls","*.png","*.jpg","*.csv","*.exe","*.msi","*.zip","*.rar","*.tar","*.log","*.cfg","*.iso","*.rdp","*.mp4","*.mp3","*.wav","*.msg","*.cer","*.deb","*.bat","*.pfx","*.img","*.ini","*.xlsm","*.pptx","*.msu","*.tbxml","*.pcapn","*.drawio"
 
 # File name extension Exclude list (Files to be excluded from being moved)
 # PS: Add Name & File name extension
-$exclude = "auto-sort.lnk","auto-sort.ps1"
+$Exclude_List = "auto-sort.lnk","auto-sort.ps1"
 
 # Script
 foreach($extension in $Extension_List)
@@ -37,8 +37,8 @@ foreach($extension in $Extension_List)
         $Desktop = "$env:USERPROFILE\Desktop\$extension"
 
         # Move file to folder
-        Move-Item -Path $Downloads -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
-        Move-Item -Path $Desktop -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
+        Move-Item -Path $Downloads -Destination "$path\$folder" -Exclude $Exclude_List -Force -Verbose -EA SilentlyContinue
+        Move-Item -Path $Desktop -Destination "$path\$folder" -Exclude $Exclude_List -Force -Verbose -EA SilentlyContinue
 
             }
 
