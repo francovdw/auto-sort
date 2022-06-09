@@ -37,8 +37,8 @@ foreach($extension in $Extension_List)
         $Desktop = "$env:USERPROFILE\Desktop\$extension"
 
         # Move file to folder
-        Move-Item -Path $pDown -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
-        Move-Item -Path $pDesk -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
+        Move-Item -Path $Downloads -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
+        Move-Item -Path $Desktop -Destination "$path\$folder" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
 
             }
 
