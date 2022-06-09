@@ -19,7 +19,7 @@ $Extension_List = "*.ps1","*.txt","*.pdf","*.docx","*.doc","*.xlsx","*.xls","*.p
 
 # File name extension Exclude list (Files to be excluded from being moved)
 # PS: Add Name & File name extension
-$Exclude_List = "auto-sort.lnk","auto-sort.ps1"
+$Exclude_List = "auto-sort.lnk","auto-sort.ps1","AC.lnk","New Tab.lnk","Chrome.lnk","seam.lnk"
 
 # Script
 foreach($extension in $Extension_List)
@@ -43,8 +43,8 @@ foreach($extension in $Extension_List)
             }
 
 # Move all unspecified files & folders into one folder
-Move-Item -Path "$env:USERPROFILE\Downloads\*" -Destination "$Path\_Other" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
-Move-Item -Path "$env:USERPROFILE\Desktop\*" -Destination "$Path\_Other" -Exclude $exclude -Force -Verbose -EA SilentlyContinue
+Move-Item -Path "$env:USERPROFILE\Downloads\*" -Destination "$Path\_Other" -Exclude $Exclude_List -Force -Verbose -EA SilentlyContinue
+Move-Item -Path "$env:USERPROFILE\Desktop\*" -Destination "$Path\_Other" -Exclude $Exclude_List -Force -Verbose -EA SilentlyContinue
 
 # Stop Transcript
 Write-Host ""
