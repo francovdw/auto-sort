@@ -19,7 +19,7 @@ $Extension_List = "*.ps1","*.txt","*.pdf","*.docx","*.doc","*.xlsx","*.xls","*.p
 
 # File name extension Exclude list (Files to be excluded from being moved)
 # PS: Add Name & File name extension
-$Exclude_List = "auto-sort.lnk","auto-sort.ps1","AC.lnk","New Tab.lnk","Chrome.lnk","seam.lnk"
+$Exclude_List = "auto-sort.lnk","auto-sort.ps1"
 
 # Script
 foreach($extension in $Extension_List)
