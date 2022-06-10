@@ -13,7 +13,7 @@ $path = "$env:USERPROFILE\Documents\_Archive"
 
 # Start Transcript
 Write-Host ""
-Start-Transcript -path "$path\trans.txt" -Append
+Start-Transcript -path "$path\transcript.log" -Append
 Write-Host ""
 Write-Host ""
 
